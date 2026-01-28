@@ -171,6 +171,9 @@ main .s2{
 
 .messagecontent{
     padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 73vh;
 }
 
 .chat{
@@ -203,7 +206,7 @@ main .s2{
     margin-right: 8px;
 }
 
-.messagecontent .chat .infouser, .messagecontent .chatuser .infouser{
+.messagecontent .infouser{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -224,10 +227,25 @@ main .s2{
     height: 50px;
     z-index: 1;
 }
-/*.titreh h2{
-    margin-right: 32%;
+
+form{
+    padding: 0px 10px 10px 10px;
+    display: flex;
 }
-*/
+form #message{
+    padding: 5px;
+    min-height: 60px;
+    width: 100%;
+    border-color: none;
+    border: 1px solid rgb(7, 140, 197);
+}
+
+form #publier{
+    height: 45px;
+    background-color: #0d8fd4;
+    color: #ccc;
+    border: 1px solid rgb(255, 255, 255);
+}
 
 @media screen and (max-width: 800px) {
     .navBar {
