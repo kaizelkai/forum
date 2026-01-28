@@ -182,19 +182,40 @@ main .s2{
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
     border-bottom-right-radius: 45px;
+    margin-bottom: 25px;
 }
-
-.chat img{
+.chatuser{
+    color: #052637;
+    padding: 10px;
+    background-color: rgba(39, 173, 250, 0.645);
+    min-width: 100px;
+    width: 50%;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    margin-bottom: 25px;
+    margin-left: 48%;
+}
+.chat img, .chatuser img{
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    margin-right: 8px;
 }
-.messagecontent .chat .infouser{
+
+.messagecontent .chat .infouser, .messagecontent .chatuser .infouser{
     width: 100%;
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
+    color: #052637;
+    margin-top: 19px;
 }
+.messagecontent .userp h4{
+    margin-top: 2px;
+    margin-bottom: -18px;
+}
+
+
 @media screen and (max-width: 800px) {
     .navBar {
         position: absolute;
