@@ -1,5 +1,8 @@
 <section class="s2">
-    <h2>TITRE</h2>
+    <div class="titreh">
+        <h2 class="titre">Une variable vide avec NULL</h2>
+    </div>
+    
     <div class="messagecontent">
         <div class="chat">
             <p>Salut Un unique serveur Apache permet de déployer simultanément plusieurs sites et services qu'on doit pour cela configurer individuellement. Pour plus de clarté, la ...</p>
@@ -12,7 +15,7 @@
                 
             </div>
         </div>
-        
+
         <div class="chatuser">
             <p>Salut Un unique serveur Apache permet de déployer simultanément plusieurs sites et services qu'on doit pour cela configurer individuellement. Pour plus de clarté, la ...</p>
             <div class="infouser">
