@@ -169,6 +169,32 @@ main .s2{
 
 }
 
+.messagecontent{
+    padding: 10px;
+}
+
+.chat{
+    color: #052637;
+    padding: 10px;
+    background-color: rgba(170, 171, 172, 0.645);
+    min-width: 100px;
+    width: 50%;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.chat img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.messagecontent .chat .infouser{
+    width: 100%;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+}
 @media screen and (max-width: 800px) {
     .navBar {
         position: absolute;
