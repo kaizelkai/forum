@@ -116,14 +116,16 @@ main .s1{
     min-width: 300px;
     width: 20%;
     height: 100vw;
-
+    overflow: scroll;
+    scrollbar-width: none;
     left: 0;
 }
 main .s2{
     min-width: 400px;
     width: 90%;
     height: 100%;
-
+    overflow: scroll;
+    scrollbar-width: none;
 }
 .s2 h1{
     justify-content: center;
