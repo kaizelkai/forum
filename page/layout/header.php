@@ -10,6 +10,6 @@
                 <li><a href="#">CONTACT</a></li>
             </ul>
         </nav>
-        <button>Welcome !</button>
+        <a class="button" href="index.php?for=register">S'inscrire</a>
     </div>
 </header>

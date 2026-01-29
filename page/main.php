@@ -17,6 +17,15 @@
         case 'detail':
             include 'page/composent/datail_content.php';
             break;
+
+        case 'register':
+            include 'page/composent/auth/register.php';
+            break;
+
+        case 'register_submission':
+            echo "register_submission";
+            include '../sgbd/controller/register/register_submission.php';
+            break;
         
         default:
             include 'page/composent/section_content.php';
@@ -24,4 +33,4 @@
     }
      ?>
 </main>
-<?php include 'page/layout/footer.php'; ?>
+<?php #include 'page/layout/footer.php'; ?>
