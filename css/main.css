@@ -362,10 +362,6 @@ section .container form select{
     font-weight: bold;
 }
 
-.container .card .loginlik{
-    background-color: #000000;
-    height: 45px;
-}
 
 @media screen and (max-width: 800px) {
     .navBar {

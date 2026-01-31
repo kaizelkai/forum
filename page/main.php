@@ -36,7 +36,7 @@
             break;
 
         case 'logout':
-            include 'sgbd/controller/login/login_user.php';
+            include 'sgbd/controller/logout/logout.php';
             break;
 
         case 'categorie':
@@ -53,6 +53,10 @@
             
         case 'addnewchat_submission':
             include 'sgbd/controller/admin/chat_submission.php';
+            break;
+
+        case 'addnewmessage_submission':
+            include 'sgbd/controller/message/addnewmessage_submission.php';
             break;
         
         default:

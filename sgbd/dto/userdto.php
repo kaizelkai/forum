@@ -2,6 +2,7 @@
     include_once __DIR__ . '/../service/userservice.php';
     include_once __DIR__ . '/singleton/bdconnexion.php';
     include_once __DIR__ . '/singleton/usertable.php';
+    include_once __DIR__ . '/../model/user.php';
     class UserDto implements UserService{
         private $CREATE_USER = "INSERT INTO users (username, email, password, profile_url, created_at, updated_at, deleted_at, created_by, updated_by, deleted_by) VALUES (:username, :email, :password, :profileUrl, :createdAt, :updatedAt, :deletedAt, :createdBy, :updatedBy, :deletedBy)";
         private $READ_USER_BY_ID = "SELECT * FROM users WHERE id = :id AND deleted_at IS NULL";
@@ -47,6 +48,7 @@
                     $row['id'],
                     $row['profile_url']
                 );
+
             }
             return null;
         }

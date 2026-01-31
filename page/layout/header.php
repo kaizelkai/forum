@@ -13,6 +13,11 @@
 
             </ul>
         </nav>
-        <a class="button" href="index.php?for=register">S'inscrire</a>
+        <?php session_start(); ?>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a class="button" href="index.php?for=logout">Logout</a>
+        <?php else: ?>
+            <a class="button" href="index.php?for=login">Se connecter</a>
+        <?php endif; ?>
     </div>
 </header>

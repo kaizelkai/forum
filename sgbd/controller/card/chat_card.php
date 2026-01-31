@@ -18,6 +18,8 @@
             echo '<h3>' . $categorie->getLabelle() . '</h3>';
             echo '<p>' . $chat->getContent() . '</p>';
             echo '<a href="index.php?for=detail&chat=' . $chat->getId() . '" class="plusInfo">En savoir plus</a>';
+            echo '<a href="index.php?for=supprimer&chat=' . $chat->getId() . '" class="plusInfo supprimer">Supprimer</a>';
+            echo '<a href="index.php?for=modifier&chat=' . $chat->getId() . '" class="plusInfo modifier">Modifier</a>';
             ?>
         </div>
     </div>

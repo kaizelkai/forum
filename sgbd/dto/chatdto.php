@@ -7,7 +7,7 @@ class ChatDTO implements ChatService {
  
     private $CREATE_CHAT = "INSERT INTO chat (title, content, user_id, categorie_id, created_by, created_at, updated_at, deleted_at, updated_by, deleted_by) VALUES (:title, :content, :userId, :categorieId, :createdBy, :createdAt, :updatedAt, :deletedAt, :updatedBy, :deletedBy)";
     private $READ_CHAT_BY_ID = "SELECT * FROM chat WHERE id = :id AND deleted_at IS NULL";
-    private $READ_ALL_CHATS = "SELECT * FROM chat  WHERE deleted_at IS NULL";
+    private $READ_ALL_CHATS = "SELECT * FROM chat  WHERE deleted_at IS NULL ORDER BY created_at DESC";
     private $UPDATE_CHAT = "UPDATE chat SET title = :title, content = :content, user_id = :userId, categorie_id = :categorieId, updated_at = :updatedAt, updated_by = :updatedBy WHERE id = :id  AND deleted_at IS NULL";
     private $DELETE_CHAT_BY_ID = "UPDATE chat SET deleted_by = :deletedBy, deleted_at = :deletedAt WHERE id = :id AND deleted_at IS NULL";
 

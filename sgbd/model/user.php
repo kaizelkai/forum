@@ -1,7 +1,6 @@
 <?php
 include_once __DIR__ . '/auditing.php';
-class User extends Auditing
-{
+class User extends Auditing{
     private $id;
     private $username;
     private $email;
