@@ -40,12 +40,12 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($row) {
                 return new User(
-                    $row['id'],
                     $row['username'],
                     $row['email'],
                     $row['password'],
-                    $row['profileUrl'],
-                    $row['createdBy']
+                    $row['created_by'],
+                    $row['id'],
+                    $row['profile_url']
                 );
             }
             return null;
@@ -56,12 +56,12 @@
             $users = [];
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $users[] = new User(
-                    $row['id'],
                     $row['username'],
                     $row['email'],
                     $row['password'],
-                    $row['profileUrl'],
-                    $row['createdBy']
+                    $row['created_by'],
+                    $row['id'],
+                    $row['profile_url']
                 );
             }
             return $users;
@@ -102,6 +102,29 @@
             $stmt = $this->pdo->prepare($this->FIND_BY_EMAIL);
             $stmt->execute(['email' => $email]);
             return $stmt;
+        }
+
+        public function exists($email){
+            $stmt = $this->pdo->prepare($this->FIND_BY_EMAIL);
+            $stmt->execute(['email' => $email]);
+            return $stmt->rowCount() > 0;
+        }
+        public function existsUsername($username){
+            $stmt = $this->pdo->prepare($this->FIND_BY_USERNAME);
+            $stmt->execute(['username' => $username]);
+            return $stmt->rowCount() > 0;
+        }
+
+        public function getUserByUsername($username){
+            $stmt = $this->pdo->prepare($this->FIND_BY_USERNAME);
+            $stmt->execute(['username' => $username]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function getUserByEmail($email){
+            $stmt = $this->pdo->prepare($this->FIND_BY_EMAIL);
+            $stmt->execute(['email' => $email]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 ?>

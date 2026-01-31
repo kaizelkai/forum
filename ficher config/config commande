@@ -5,6 +5,7 @@ sudo chmod 755 /var/www
 #CONFIGURATION apache et le projet en cours
 Etape 1: sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip
 Etape 2: sudo nano /etc/apache2/sites-available/forum.conf
+         sudo nano /etc/apache2/sites-available/forum.conf
 
 <VirtualHost *:80>
     ServerName forum.local
@@ -15,6 +16,21 @@ Etape 2: sudo nano /etc/apache2/sites-available/forum.conf
     </Directory>
 </VirtualHost>
 
+<VirtualHost *:80>
+    ServerName forum.local
+    DocumentRoot /var/www/forum
+    <Directory /var/www/forum>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
 Etape 3 : sudo a2ensite forum.conf 
 Etape 4 : sudo a2dissite 000-default.conf
 Etape 5 : sudo systemctl restart apache2 
+Etape 6 : sudo nano /etc/hosts
+          127.0.0.1 forum.local

@@ -1,5 +1,5 @@
 <?php
-
+include_once __DIR__ . '/auditing.php';
 class User extends Auditing
 {
     private $id;
@@ -8,7 +8,7 @@ class User extends Auditing
     private $password;
     private $profileUrl;
 
-    public function __construct(int $id, string $username, string $email, string $password, string $profileUrl, int $createdBy)
+    public function __construct(string $username, string $email, string $password, int $createdBy, ?int $id=null, ?string $profileUrl=null)
     {
         parent::__construct($createdBy);
         $this->id = $id;
@@ -38,7 +38,7 @@ class User extends Auditing
         return $this->password;
     }
 
-    public function getProfileUrl(): string
+    public function getProfileUrl(): ?string
     {
         return $this->profileUrl;
     }

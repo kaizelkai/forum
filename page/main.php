@@ -4,7 +4,8 @@
         salut
     </section>
     <?php 
-    $choix= $_GET["for"];
+    // Traiter register_submission AVANT tout contenu HTML
+    $choix= $_GET["for"] ?? 'home';
     switch ($choix) {
         case 'home':
             include 'page/composent/section_content.php';
@@ -23,14 +24,42 @@
             break;
 
         case 'register_submission':
-            echo "register_submission";
-            include '../sgbd/controller/register/register_submission.php';
+            include 'sgbd/controller/register/register_submission.php';
+            break;
+
+        case 'login':
+            include 'page/composent/auth/login.php';
+            break;
+
+        case 'login_user':
+            include 'sgbd/controller/login/login_user.php';
+            break;
+
+        case 'logout':
+            include 'sgbd/controller/login/login_user.php';
+            break;
+
+        case 'categorie':
+            include 'page/composent/admin/categorie.php';
+            break; 
+            
+        case 'categorie_submission':
+            include 'sgbd/controller/admin/categorie_submission.php';
+            break;
+            
+        case 'addnewchat':
+            include 'page/composent/admin/addnewchat.php';
+            break;
+            
+        case 'addnewchat_submission':
+            include 'sgbd/controller/admin/chat_submission.php';
             break;
         
         default:
             include 'page/composent/section_content.php';
             break;
     }
+
      ?>
 </main>
 <?php #include 'page/layout/footer.php'; ?>

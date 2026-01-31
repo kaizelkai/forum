@@ -2,12 +2,9 @@
 <?php
     include_once __DIR__ . '/bdconnexion.php';
     try{
-        $usertable = "CREATE TABLE IF NOT EXISTS users (
+        $categorietable = "CREATE TABLE IF NOT EXISTS categories (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(50) NOT NULL UNIQUE,
-        email VARCHAR(100) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL,
-        profile_url VARCHAR(255),
+        labelle VARCHAR(50) NOT NULL UNIQUE,
         created_at DATETIME NOT NULL,
         updated_at DATETIME,
         deleted_at DATETIME,
@@ -16,8 +13,8 @@
         deleted_by INT
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
     $pdo = ConnexionBD::getPdo();
-    $pdo->exec($usertable);
-    // echo "Table 'users' créée ou déjà existante."; // Supprimé pour ne pas bloquer les headers
+    $pdo->exec($categorietable);
+    // echo "Table 'categories' créée ou déjà existante."; // Supprimé pour ne pas bloquer les headers
     }catch(PDOException $e){
         die('Erreur de création de la table : '.$e->getMessage());
     }

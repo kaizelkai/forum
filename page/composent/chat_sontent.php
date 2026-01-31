@@ -51,7 +51,7 @@
         </div>
 
         <div class="chatusermedia">
-            <video class="imgchat" src="assets/6.mp4" controls srcset="" autoplay="true"></video>
+            <video class="imgchat" src="assets/6.mp4" controls srcset=""></video>
             <div class="infouser">
                 <img src="assets/1.png" alt="" srcset="">
                 <div class="userp">
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="chatmedia">
-            <video class="imgchat" src="assets/6.mp4" controls srcset="" autoplay="true"></video>
+            <video class="imgchat" src="assets/6.mp4" controls srcset=""></video>
             <div class="infouser">
                 <img src="assets/1.png" alt="" srcset="">
                 <div class="userp">
@@ -74,8 +74,6 @@
     </div>
     <form action="#" method="post">
         <textarea name="message" id="message" ></textarea>
-        
         <input type="submit" value="Publier" id="publier">
-    
     </form>
 </section>
