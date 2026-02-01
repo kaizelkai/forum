@@ -1,4 +1,3 @@
-
 const textarea = document.getElementById("content");
 const counter = document.getElementById("charCount");
 

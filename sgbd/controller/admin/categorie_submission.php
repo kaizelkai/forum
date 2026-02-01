@@ -4,8 +4,13 @@
 
     $labelle = htmlspecialchars($_POST['labelle']);
     $createdBy = 1; // ID de l'utilisateur admin ou système
+    $userId = $_SESSION['user_id'] ?? null;
 
-    if (!empty($labelle)) {
+    if ($userId) {
+        $createdBy = $userId;
+    }
+
+    if (!empty($labelle) && isset($userId)) {
         $categorie = new Categorie(null, $labelle, $createdBy);
         $categorieDTO = new CategorieDTO();
         $categorieDTO->create($categorie);
@@ -13,7 +18,7 @@
         header("Location: index.php?for=home");
         exit();
     } else {
-        header("Location: index.php?for=homevvvvvvv");
+        header("Location: index.php?for=login");
         exit();
     }
 ?>

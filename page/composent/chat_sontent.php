@@ -59,7 +59,23 @@
         </div>
         
     </div>
+    <span id="fileName" class="fileName">Aucun fichier</span>
     <form action="/index.php?for=addnewmessage_submission&chat=<?php echo $_GET['chat']; ?>" method="post">
+        <div class="file">
+            <input type="file" name="media" id="media" hidden>
+
+            <button 
+                type="button" 
+                id="mediaBtn"
+                class="btn btn-secondary rounded-circle"
+                style="width:40px;height:40px"
+                onclick="document.getElementById('media').click()">
+                <span id="icon">+</span>
+            </button>
+
+            
+        </div>
+
         <textarea name="message" id="message" ></textarea>
         <input type="submit" value="Publier" id="publier">
     </form>
